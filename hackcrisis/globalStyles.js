@@ -16,6 +16,9 @@ const styles = StyleSheet.create({
   header: {
     fontSize: 22,
   },
+  label: {
+    fontSize: 18,
+  },
 });
 
 export default styles;

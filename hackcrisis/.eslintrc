@@ -17,6 +17,7 @@
     "react/sort-comp": [0],
     "react/destructuring-assignment": [0],
     "react/forbid-prop-types": [0],
+    "react/jsx-max-props-per-line": [2, { "maximum": 1, "when": "always" }],
     "react/no-unescaped-entities": ["error", { "forbid": [">", "}"] }],
     "quotes": [
       "error",

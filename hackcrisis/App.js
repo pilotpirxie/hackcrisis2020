@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { SafeAreaView } from 'react-native';
 import Home from './containers/Home';
+import Settings from './containers/Settings';
 import globalStyles from './globalStyles';
 
 export default class App extends Component {
@@ -8,6 +9,7 @@ export default class App extends Component {
     return (
       <SafeAreaView style={globalStyles.container}>
         <Home />
+        {/*<Settings />*/}
       </SafeAreaView>
     );
   }

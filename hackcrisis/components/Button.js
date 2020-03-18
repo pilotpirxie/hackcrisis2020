@@ -6,7 +6,7 @@ export default class Button extends Component {
   render() {
     return (
       <TouchableOpacity style={styles.button} onPress={this.props.handlePress}>
-        <Text style={styles.text}>{this.props.children}</Text>
+        <Text style={styles.text}>{`${this.props.children}`}</Text>
       </TouchableOpacity>
     );
   }
@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
     padding: 36,
     borderRadius: 15,
     borderColor: '#000',
-    borderWidth: 6,
+    borderWidth: 3,
     margin: 5,
   },
   text: {
