@@ -1,20 +1,14 @@
-import React from 'react';
-import { StyleSheet, Text, View, Button } from 'react-native';
+import React, { Component } from 'react';
+import { SafeAreaView } from 'react-native';
+import Home from './containers/Home';
+import globalStyles from './globalStyles';
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>HackCrisis 2020!</Text>
-      <Button onPress={() => {console.log('Test')}} title={'Teeest'} />
-    </View>
-  );
+export default class App extends Component {
+  render() {
+    return (
+      <SafeAreaView style={globalStyles.container}>
+        <Home />
+      </SafeAreaView>
+    );
+  }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
