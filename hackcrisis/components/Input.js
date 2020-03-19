@@ -17,6 +17,7 @@ export default class Input extends Component {
           </Text>
         )}
         <TextInput
+          placeholder={this.props.placeholder}
           secureTextEntry={this.props.secureTextEntry}
           style={styles.input}
           value={`${this.props.value}`}
@@ -30,6 +31,7 @@ export default class Input extends Component {
 Input.defaultProps = {
   secureTextEntry: false,
   label: '',
+  placeholder: '',
 };
 
 Input.propTypes = {
@@ -37,19 +39,23 @@ Input.propTypes = {
   handleChangeText: PropTypes.func.isRequired,
   secureTextEntry: PropTypes.bool,
   label: PropTypes.string,
+  placeholder: PropTypes.string,
 };
 
 const styles = StyleSheet.create({
   inputContainer: {
     marginTop: 20,
+    shadowColor: '#3c80d1',
+    shadowOffset: { width: 0, height: 10 },
+    shadowOpacity: 0.2,
+    shadowRadius: 25,
   },
   input: {
     fontSize: 20,
     fontWeight: 'bold',
     textAlign: 'left',
-    borderBottomWidth: 3,
-    borderColor: '#000',
-    padding: 5,
-    backgroundColor: '#eee',
+    padding: 25,
+    backgroundColor: '#fff',
+    borderRadius: 15,
   },
 });

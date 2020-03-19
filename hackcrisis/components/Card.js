@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, TouchableOpacity } from 'react-native';
+import {
+  StyleSheet, Text, TouchableOpacity, View, Image,
+} from 'react-native';
 import PropTypes from 'prop-types';
 
 export default class Card extends Component {
@@ -9,6 +11,12 @@ export default class Card extends Component {
         style={styles.card}
         onPress={this.props.handlePress}
       >
+        <View>
+          <Image
+            style={styles.image}
+            source={require('../assets/image1.png')}
+          />
+        </View>
         <Text style={styles.label}>{this.props.label}</Text>
         <Text style={styles.title}>{this.props.title}</Text>
         <Text style={styles.prompt}>
@@ -22,7 +30,7 @@ export default class Card extends Component {
 Card.propTypes = {
   handlePress: PropTypes.func.isRequired,
   label: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired
+  title: PropTypes.string.isRequired,
 };
 
 const styles = StyleSheet.create({
@@ -36,6 +44,7 @@ const styles = StyleSheet.create({
     marginTop: 15,
     marginBottom: 15,
     backgroundColor: '#fff',
+    overflow: 'hidden',
   },
   title: {
     fontSize: 26,
@@ -48,11 +57,19 @@ const styles = StyleSheet.create({
     textTransform: 'uppercase',
     marginBottom: 15,
     fontSize: 18,
+    top: -5,
   },
   prompt: {
     color: '#344356',
     opacity: 0.6,
     marginTop: 15,
     fontSize: 18,
+  },
+  image: {
+    resizeMode: 'cover',
+    width: '150%',
+    height: 200,
+    left: -40,
+    top: -35,
   },
 });

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { View, Text } from 'react-native';
-import { Ionicons } from '@expo/vector-icons';
 import Button from '../components/Button';
 import Card from '../components/Card';
 import globalStyles from '../globalStyles';
@@ -21,18 +20,21 @@ export default class Home extends Component {
           primary
           handlePress={() => {}}
           icon="arrow-right"
+          large
         >
         Wyślij status
         </Button>
         <Button
           handlePress={() => {}}
           icon="plus"
+          large
         >
           Zgłoś potrzebę
         </Button>
         <Button
           handlePress={() => {}}
           icon="gear"
+          large
         >
           Ustawienia
         </Button>

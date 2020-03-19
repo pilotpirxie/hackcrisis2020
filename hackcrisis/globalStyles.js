@@ -1,20 +1,24 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Platform } from 'react-native';
 
 const styles = StyleSheet.create({
+  scrollViewContainer: {
+    backgroundColor: '#ebf2ff',
+  },
   container: {
     flex: 1,
-    backgroundColor: '#ebf2ff',
     alignItems: 'center',
   },
   innerContainer: {
     width: '90%',
-    marginTop: '10%',
+    marginTop: Platform.OS === 'ios' ? 0 : '10%',
+    paddingBottom: 40,
   },
   title: {
     fontSize: 34,
     fontWeight: 'bold',
     color: '#344356',
     textAlign: 'center',
+    width: '100%',
   },
   header: {
     fontSize: 20,
@@ -25,11 +29,18 @@ const styles = StyleSheet.create({
   },
   label: {
     color: '#344356',
-    fontSize: 20,
-    textTransform: 'uppercase',
+    fontSize: 24,
     textAlign: 'center',
     fontWeight: 'bold',
-    marginTop: 25,
+    marginTop: 10,
+    marginBottom: 5,
+  },
+  smallText: {
+    color: '#344356',
+    fontSize: 16,
+    textAlign: 'center',
+    marginTop: 5,
+    marginBottom: 5,
   },
 });
 
