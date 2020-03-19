@@ -35,6 +35,21 @@ const styles = StyleSheet.create({
     marginTop: 10,
     marginBottom: 5,
   },
+  paragraph: {
+    color: '#344356',
+    opacity: 0.8,
+    fontSize: 24,
+    textAlign: 'left',
+    marginTop: 5,
+    marginBottom: 5,
+  },
+  bold: {
+    color: '#344356',
+    fontSize: 28,
+    textAlign: 'left',
+    marginTop: 15,
+    fontWeight: 'bold',
+  },
   smallText: {
     color: '#344356',
     fontSize: 16,

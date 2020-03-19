@@ -1,13 +1,16 @@
 import React, { Component } from 'react';
 import { SafeAreaView, ScrollView } from 'react-native';
+import globalStyles from './globalStyles';
+
 import Home from './containers/Home';
 import Settings from './containers/Settings';
 import Status0 from './containers/Status0';
 import Status1 from './containers/Status1';
-// import Status2 from './containers/Status2';
-// import Needs from './containers/Needs';
+import Status2 from './containers/Status2';
+import Needs from './containers/Needs';
 import Submitted from './containers/Submitted';
-import globalStyles from './globalStyles';
+import Article from "./containers/Article";
+
 
 export default class App extends Component {
   render() {
@@ -20,7 +23,8 @@ export default class App extends Component {
           {/*<Status1 />*/}
           {/*<Status2 />*/}
           {/*<Needs />*/}
-          <Submitted />
+          {/*<Submitted />*/}
+          <Article />
         </SafeAreaView>
       </ScrollView>
     );
