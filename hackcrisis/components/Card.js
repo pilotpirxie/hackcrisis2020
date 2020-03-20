@@ -4,6 +4,8 @@ import {
 } from 'react-native';
 import PropTypes from 'prop-types';
 
+const imageSource = require('../assets/image1.png');
+
 export default class Card extends Component {
   render() {
     return (
@@ -14,7 +16,7 @@ export default class Card extends Component {
         <View>
           <Image
             style={styles.image}
-            source={require('../assets/image1.png')}
+            source={imageSource}
           />
         </View>
         <Text style={styles.label}>{this.props.label}</Text>

@@ -22,6 +22,7 @@ export default class Input extends Component {
           style={styles.input}
           value={`${this.props.value}`}
           onChangeText={this.props.handleChangeText}
+          multiline={this.props.multiline}
         />
       </View>
     );
@@ -32,6 +33,7 @@ Input.defaultProps = {
   secureTextEntry: false,
   label: '',
   placeholder: '',
+  multiline: false,
 };
 
 Input.propTypes = {
@@ -40,6 +42,7 @@ Input.propTypes = {
   secureTextEntry: PropTypes.bool,
   label: PropTypes.string,
   placeholder: PropTypes.string,
+  multiline: PropTypes.bool,
 };
 
 const styles = StyleSheet.create({

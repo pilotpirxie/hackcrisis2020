@@ -8,7 +8,8 @@ import Wrapper from '../components/Wrapper';
 import NavbarProgressbar from '../components/NavbarProgressbar';
 import Button from '../components/Button';
 import globalStyles from '../globalStyles';
-import Article from './Article';
+
+const imageSource = require('../assets/image2.png');
 
 export default class Status0 extends Component {
   render() {
@@ -27,7 +28,7 @@ export default class Status0 extends Component {
             <View style={styles.roundedImage}>
               <Image
                 style={styles.image}
-                source={require('../assets/image2.png')}
+                source={imageSource}
               />
             </View>
 

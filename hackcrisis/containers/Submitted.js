@@ -3,11 +3,10 @@ import {
   Text,
   View,
 } from 'react-native';
+import PropTypes from 'prop-types';
 import Button from '../components/Button';
 import globalStyles from '../globalStyles';
-import Wrapper from "../components/Wrapper";
-import PropTypes from "prop-types";
-import Status0 from "./Status0";
+import Wrapper from '../components/Wrapper';
 
 export default class Submitted extends Component {
   render() {
@@ -15,7 +14,7 @@ export default class Submitted extends Component {
       <Wrapper>
         <View style={globalStyles.innerContainer}>
           <Text style={globalStyles.title}>
-            {`Wysłano`}
+            Wysłano
           </Text>
 
           <Text style={globalStyles.header}>

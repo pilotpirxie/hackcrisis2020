@@ -10,15 +10,11 @@ import globalStyles from '../globalStyles';
 
 export default class Home extends Component {
   render() {
-    const day = new Date().getDate();
-    const month = new Date().getMonth() + 1;
-    const year = new Date().getFullYear();
-    const dateToRender = `${day < 10 ? `0${day}` : day}.${month < 10 ? `0${month}` : month}.${year < 10 ? `0${year}` : year}`;
     return (
       <Wrapper>
         <View style={globalStyles.innerContainer}>
           <Text style={globalStyles.title}>
-            {`Kraków, ${dateToRender}`}
+            #zostańwdomu
           </Text>
           <Text style={globalStyles.header}>Regularnie informuj lokalne władze o swoim stanie zdrowia i ewentualnych potrzebach.</Text>
           <Button

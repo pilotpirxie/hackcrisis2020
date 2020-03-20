@@ -10,7 +10,7 @@ export default class Button extends Component {
     const buttonStyles = StyleSheet.create({
       container: {
         width: '100%',
-        alignItems: 'center'
+        alignItems: 'center',
       },
       button: {
         padding: 24,
@@ -71,6 +71,7 @@ export default class Button extends Component {
 Button.defaultProps = {
   primary: false,
   icon: false,
+  large: false,
 };
 
 Button.propTypes = {
@@ -78,4 +79,5 @@ Button.propTypes = {
   handlePress: PropTypes.func.isRequired,
   primary: PropTypes.bool,
   icon: PropTypes.string,
+  large: PropTypes.bool,
 };

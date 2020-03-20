@@ -19,6 +19,8 @@ export default class App extends Component {
       <NavigationContainer>
         <Stack.Navigator screenOptions={{
           headerShown: false,
+          headerLeft: null,
+          gestureEnabled: false,
         }}
         >
           <Stack.Screen

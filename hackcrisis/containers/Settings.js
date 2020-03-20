@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
 import { View, Text } from 'react-native';
+import PropTypes from 'prop-types';
 import Navbar from '../components/Navbar';
 import Button from '../components/Button';
 import Input from '../components/Input';
 import globalStyles from '../globalStyles';
-import Wrapper from "../components/Wrapper";
-import PropTypes from "prop-types";
-import Article from "./Article";
+import Wrapper from '../components/Wrapper';
 
 export default class Settings extends Component {
   render() {

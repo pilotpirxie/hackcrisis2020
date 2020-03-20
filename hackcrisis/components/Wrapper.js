@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { SafeAreaView, ScrollView } from 'react-native';
+import PropTypes from 'prop-types';
 import globalStyles from '../globalStyles';
 
 class Wrapper extends Component {
@@ -16,5 +17,9 @@ class Wrapper extends Component {
     );
   }
 }
+
+Wrapper.propTypes = {
+  children: PropTypes.any.isRequired,
+};
 
 export default Wrapper;

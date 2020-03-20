@@ -3,11 +3,10 @@ import {
   Text,
   View,
 } from 'react-native';
+import PropTypes from 'prop-types';
 import Wrapper from '../components/Wrapper';
 import globalStyles from '../globalStyles';
 import Navbar from '../components/Navbar';
-import PropTypes from "prop-types";
-import Home from "./Home";
 
 export default class Article extends Component {
   render() {

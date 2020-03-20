@@ -1,16 +1,46 @@
 import React, { Component } from 'react';
 import {
+  Alert,
+  AsyncStorage,
   View,
 } from 'react-native';
+import PropTypes from 'prop-types';
 import NavbarProgressbar from '../components/NavbarProgressbar';
 import Button from '../components/Button';
 import globalStyles from '../globalStyles';
 import Input from '../components/Input';
-import Wrapper from "../components/Wrapper";
-import PropTypes from "prop-types";
-import Article from "./Article";
+import Wrapper from '../components/Wrapper';
 
 export default class Needs extends Component {
+  constructor() {
+    super();
+
+    this.state = {
+      needs: '',
+    };
+
+    this.setValue = this.setValue.bind(this);
+    this.onPress = this.onPress.bind(this);
+  }
+
+  setValue(propName, newValue) {
+    this.setState((prevState) => ({
+      ...prevState,
+      [propName]: newValue,
+    }));
+  }
+
+  async onPress() {
+    try {
+      const value = JSON.parse(await AsyncStorage.getItem('statusData'));
+      const state = { ...value, ...this.state };
+      await fetch('https://');
+      this.props.navigation.navigate('Submitted');
+    } catch (error) {
+      Alert.alert('Uwaga', 'Nie udało się zapisać danych');
+    }
+  }
+
   render() {
     return (
       <Wrapper>
@@ -25,8 +55,8 @@ export default class Needs extends Component {
 
           <Input
             label="Opisz potrzebę"
-            value=""
-            handleChangeText={() => {}}
+            value={this.state.needs}
+            handleChangeText={(newValue) => this.setValue('needs', newValue)}
             placeholder="Potrzebna pomoc"
           />
 

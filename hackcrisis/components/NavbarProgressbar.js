@@ -4,14 +4,13 @@ import {
 } from 'react-native';
 import PropTypes from 'prop-types';
 import { FontAwesome } from '@expo/vector-icons';
-import globalStyles from '../globalStyles';
 
 export default class NavbarProgressbar extends Component {
   render() {
     const progressbarStyles = StyleSheet.create({
       bar: {
         backgroundColor: '#00D9CD',
-        width: `${Number.parseInt(100 * (this.props.current / this.props.max))}%`,
+        width: `${Number.parseInt(100 * (this.props.current / this.props.max), 10)}%`,
         height: 16,
         borderRadius: 15,
         zIndex: 1,

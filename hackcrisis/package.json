@@ -32,5 +32,9 @@
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.19.0"
   },
-  "private": true
+  "private": true,
+  "scripts": {
+    "eslint": "./node_modules/.bin/eslint .",
+    "fix": "./node_modules/.bin/eslint --fix ."
+  }
 }
