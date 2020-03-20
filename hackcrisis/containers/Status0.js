@@ -2,50 +2,59 @@ import React, { Component } from 'react';
 import {
   View, Text, Image, StyleSheet,
 } from 'react-native';
+import PropTypes from 'prop-types';
+import Wrapper from '../components/Wrapper';
+
 import NavbarProgressbar from '../components/NavbarProgressbar';
 import Button from '../components/Button';
 import globalStyles from '../globalStyles';
+import Article from './Article';
 
 export default class Status0 extends Component {
   render() {
     return (
-      <View style={globalStyles.innerContainer}>
+      <Wrapper>
+        <View style={globalStyles.innerContainer}>
 
-        <NavbarProgressbar
-          current={1}
-          max={3}
-          icon="close"
-          handlePress={() => console.log('Test')}
-        />
+          <NavbarProgressbar
+            current={1}
+            max={3}
+            icon="close"
+            handlePress={() => this.props.navigation.navigate('Home')}
+          />
 
-        <View style={styles.container}>
-          <View style={styles.roundedImage}>
-            <Image
-              style={styles.image}
-              source={require('../assets/image2.png')}
-            />
+          <View style={styles.container}>
+            <View style={styles.roundedImage}>
+              <Image
+                style={styles.image}
+                source={require('../assets/image2.png')}
+              />
+            </View>
+
+            <Text style={globalStyles.title}>
+              {'Przygotuj się do \nodpowiedzi na kilka \npytań o stan zdrowia'}
+            </Text>
           </View>
 
-          <Text style={globalStyles.title}>
-            {"Przygotuj się do \nodpowiedzi na kilka \npytań o stan zdrowia"}
-          </Text>
+          <Button
+            handlePress={() => this.props.navigation.navigate('Status1')}
+            icon="arrow-right"
+          >
+            Dalej
+          </Button>
         </View>
-
-        <Button
-          handlePress={() => {}}
-          icon="arrow-right"
-        >
-          Dalej
-        </Button>
-      </View>
+      </Wrapper>
     );
   }
 }
 
+Status0.propTypes = {
+  navigation: PropTypes.object.isRequired,
+};
 
 const styles = StyleSheet.create({
   container: {
-    alignItems: 'center'
+    alignItems: 'center',
   },
   roundedImage: {
     borderRadius: 125,

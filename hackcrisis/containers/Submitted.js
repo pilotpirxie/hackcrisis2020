@@ -5,26 +5,35 @@ import {
 } from 'react-native';
 import Button from '../components/Button';
 import globalStyles from '../globalStyles';
+import Wrapper from "../components/Wrapper";
+import PropTypes from "prop-types";
+import Status0 from "./Status0";
 
 export default class Submitted extends Component {
   render() {
     return (
-      <View style={globalStyles.innerContainer}>
-        <Text style={globalStyles.title}>
-          {`Wysłano`}
-        </Text>
+      <Wrapper>
+        <View style={globalStyles.innerContainer}>
+          <Text style={globalStyles.title}>
+            {`Wysłano`}
+          </Text>
 
-        <Text style={globalStyles.header}>
-          Informacja została wysłana do ustawionej jednostki nadzorującej. Jeżeli potrzebujesz pilnej pomocy, nie czekaj i zadzwoń na numer alarmowy!
-        </Text>
+          <Text style={globalStyles.header}>
+            Informacja została wysłana do ustawionej jednostki nadzorującej. Jeżeli potrzebujesz pilnej pomocy, nie czekaj i zadzwoń na numer alarmowy!
+          </Text>
 
-        <Button
-          handlePress={() => {}}
-          icon="arrow-left"
-        >
-          Powrót
-        </Button>
-      </View>
+          <Button
+            handlePress={() => this.props.navigation.navigate('Home')}
+            icon="arrow-left"
+          >
+            Powrót
+          </Button>
+        </View>
+      </Wrapper>
     );
   }
 }
+
+Submitted.propTypes = {
+  navigation: PropTypes.object.isRequired,
+};
