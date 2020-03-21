@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
+import DeviceInfo from 'react-native-device-info';
+
 import Navbar from '../components/Navbar';
 import Button from '../components/Button';
 import Input from '../components/Input';
@@ -20,7 +22,9 @@ export default class Settings extends Component {
           />
 
           <Text style={globalStyles.header}>
-            Jednorazowa konfiguracja urządzenia. Nie zmieniaj tych informacji bez powodu, możesz utracić połączenie.
+            Jednorazowa konfiguracja urządzenia. Nie zmieniaj tych informacji bez powodu.
+            Niezbędne dane otrzymasz od najbliższej jednostki nadzorującej.
+            Zazwyczaj jest to komisariat policji lub urząd miasta.
           </Text>
 
           <Input
@@ -38,19 +42,19 @@ export default class Settings extends Component {
             handleChangeText={() => {}}
           />
 
-          <Input
-            label="Imię i nazwisko"
-            value=""
-            placeholder="Twoje imię i nazwisko"
-            handleChangeText={() => {}}
-          />
+          {/* <Input */}
+          {/*  label="Imię i nazwisko" */}
+          {/*  value="" */}
+          {/*  placeholder="Twoje imię i nazwisko" */}
+          {/*  handleChangeText={() => {}} */}
+          {/* /> */}
 
-          <Input
-            label="Miejsce zamieszkania"
-            value=""
-            placeholder="Miejscowość i nr mieszkania/domu"
-            handleChangeText={() => {}}
-          />
+          {/* <Input */}
+          {/*  label="Miejsce zamieszkania" */}
+          {/*  value="" */}
+          {/*  placeholder="Miejscowość i nr mieszkania/domu" */}
+          {/*  handleChangeText={() => {}} */}
+          {/* /> */}
 
           <Button
             handlePress={() => this.props.navigation.navigate('Home')}
@@ -64,7 +68,7 @@ export default class Settings extends Component {
           </Text>
 
           <Text style={globalStyles.smallText}>
-            Nazwa urządzenia
+            Nazwa urządzenia:
           </Text>
 
           <Text style={globalStyles.smallText}>

@@ -32,9 +32,18 @@ export default class Needs extends Component {
 
   async onPress() {
     try {
-      const value = JSON.parse(await AsyncStorage.getItem('statusData'));
-      const state = { ...value, ...this.state };
-      await fetch('https://');
+      const response = await fetch('https://postman-echo.com/post', {
+        method: 'POST',
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          ...this.state,
+        }),
+      });
+      const responseJson = await response.json();
+      console.info(responseJson);
       this.props.navigation.navigate('Submitted');
     } catch (error) {
       Alert.alert('Uwaga', 'Nie udało się zapisać danych');
@@ -61,7 +70,7 @@ export default class Needs extends Component {
           />
 
           <Button
-            handlePress={() => this.props.navigation.navigate('Submitted')}
+            handlePress={this.onPress}
             icon="arrow-up"
           >
             Wyślij

@@ -32,7 +32,21 @@ export default class Status2 extends Component {
   async onPress() {
     try {
       const value = JSON.parse(this.props.route.params.statusData);
-      const state = { ...value, ...this.state };
+
+      const response = await fetch('https://postman-echo.com/post', {
+        method: 'POST',
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          ...value,
+          ...this.state,
+        }),
+      });
+      const responseJson = await response.json();
+      console.info(responseJson);
+
       this.props.navigation.navigate('Submitted');
     } catch (error) {
       Alert.alert('Uwaga', 'Nie udało się wysłać danych. W przypadku pilnej potrzeby zadzwoń na Telefoniczną Informację Pacjenta 800 190 590 lub pod 112.');
