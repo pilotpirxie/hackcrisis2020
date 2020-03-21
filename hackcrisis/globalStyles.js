@@ -52,7 +52,7 @@ const styles = StyleSheet.create({
   },
   smallText: {
     color: '#344356',
-    fontSize: 16,
+    fontSize: 14,
     textAlign: 'center',
     marginTop: 5,
     marginBottom: 5,
