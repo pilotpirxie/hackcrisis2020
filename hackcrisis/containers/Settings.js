@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
-import DeviceInfo from 'react-native-device-info';
+import * as Device from 'expo-device';
 
 import Navbar from '../components/Navbar';
 import Button from '../components/Button';
@@ -68,11 +68,11 @@ export default class Settings extends Component {
           </Text>
 
           <Text style={globalStyles.smallText}>
-            Nazwa urządzenia:
+            Nazwa urządzenia: {`${Device.deviceName}`}
           </Text>
 
           <Text style={globalStyles.smallText}>
-            Identyfikator urządzenia
+            Identyfikator urządzenia: {`${Device.brand} ${Device.modelName} ${Device.osName} ${Device.osBuildId} `}
           </Text>
         </View>
       </Wrapper>
