@@ -55,7 +55,7 @@ app.post('/authorities/:id/email', async (req, res) => {
       return res.sendStatus(404);
     }
     const requestData = {
-      access_token: 'INVALIDATED',
+      access_token: '6971c836-6bd8-11ea-bc55-0242ac130003',
       to: authorityData.email,
       subject: `${requestType} - ${userData.name} ${userData.surname}`,
       message: `
