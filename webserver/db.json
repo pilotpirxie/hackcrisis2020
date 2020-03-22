@@ -1,0 +1,19 @@
+{
+  "authorities": [
+    {
+      "id": "KRKKM",
+      "email": "lisoh76906@provamail.com"
+    }
+  ],
+  "users": [
+    {
+      "id": "limiperobr",
+      "name": "Janek",
+      "surname": "Śmietanek",
+      "age": 31,
+      "location": "Kraków, Harcerska 3",
+      "phone": "123456789",
+      "email": null
+    }
+  ]
+}
