@@ -69,8 +69,6 @@ app.post('/authorities/:id/email', async (req, res) => {
         ${message}
       `
     };
-    console.log(requestData);
-
     await axios.post(
       'https://hackcrisis.gamenado.com/mail.php',
       qs.stringify(requestData),
@@ -79,7 +77,9 @@ app.post('/authorities/:id/email', async (req, res) => {
           'Content-Type': 'application/x-www-form-urlencoded'
         }
       });
-    res.sendStatus(200);
+    return res.json({
+      msg: 'Sent'
+    });
   } catch (e) {
     console.log(e);
     return res.sendStatus(400);

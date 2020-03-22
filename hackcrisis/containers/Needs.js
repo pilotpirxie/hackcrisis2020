@@ -32,21 +32,26 @@ export default class Needs extends Component {
 
   async onPress() {
     try {
-      const response = await fetch('https://postman-echo.com/post', {
+      const authorityId = await AsyncStorage.getItem('authorityId');
+      const userId = await AsyncStorage.getItem('userId');
+
+      await fetch(`http://192.168.0.186:8080/authorities/${authorityId}/email`, {
         method: 'POST',
         headers: {
           Accept: 'application/json',
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          ...this.state,
+          message: JSON.stringify({
+            ...this.state,
+          }),
+          requestType: 'Potrzeba',
+          userId,
         }),
       });
-      const responseJson = await response.json();
-      console.info(responseJson);
       this.props.navigation.navigate('Submitted');
     } catch (error) {
-      Alert.alert('Uwaga', 'Nie udało się zapisać danych');
+      Alert.alert('Uwaga', 'Nie udało się wysłać danych. W przypadku pilnej potrzeby zadzwoń na Telefoniczną Informację Pacjenta 800 190 590 lub pod 112.');
     }
   }
 

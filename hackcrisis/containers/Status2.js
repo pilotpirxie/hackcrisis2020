@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {
-  Alert,
+  Alert, AsyncStorage,
   View,
 } from 'react-native';
 import PropTypes from 'prop-types';
@@ -32,21 +32,24 @@ export default class Status2 extends Component {
   async onPress() {
     try {
       const value = JSON.parse(this.props.route.params.statusData);
+      const authorityId = await AsyncStorage.getItem('authorityId');
+      const userId = await AsyncStorage.getItem('userId');
 
-      const response = await fetch('https://postman-echo.com/post', {
+      await fetch(`http://192.168.0.186:8080/authorities/${authorityId}/email`, {
         method: 'POST',
         headers: {
           Accept: 'application/json',
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          ...value,
-          ...this.state,
+          message: JSON.stringify({
+            ...value,
+            ...this.state,
+          }),
+          requestType: 'Status',
+          userId,
         }),
       });
-      const responseJson = await response.json();
-      console.info(responseJson);
-
       this.props.navigation.navigate('Submitted');
     } catch (error) {
       Alert.alert('Uwaga', 'Nie udało się wysłać danych. W przypadku pilnej potrzeby zadzwoń na Telefoniczną Informację Pacjenta 800 190 590 lub pod 112.');
